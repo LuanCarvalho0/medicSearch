@@ -1,5 +1,13 @@
 from django.contrib import admin
-from medicSearch.models import Profile
+from medicSearch.models import Profile, State, City, Neighborhood, Address \
+, DayWeek, Rating, Speciality
 
 
 admin.site.register(Profile)
+admin.site.register(State)
+admin.site.register(City)
+admin.site.register(Neighborhood)
+admin.site.register(Address)
+admin.site.register(DayWeek)
+admin.site.register(Rating)
+admin.site.register(Speciality)
