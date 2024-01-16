@@ -35,6 +35,7 @@ def list_profile_view(request, id=None):
 
     return render(request, template_name='profile/profile.html', context=context, status=200)
 
+@login_required
 def edit_profile(request):
     profile = get_object_or_404(Profile, user=request.user)
     emailUnused = True

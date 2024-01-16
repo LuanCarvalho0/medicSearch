@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from medicSearch.models import Profile, Rating
 from medicSearch.forms.MedicForm import MedicRatingForm
@@ -107,6 +108,7 @@ def remove_favorite_view(request):
 
     return redirect(to='/profile/%s' % arguments)
 
+@login_required
 def rate_medic(request, medic_id=None):
     medic = Profile.objects.filter(user__id=medic_id).first()
     rating = Rating.objects.filter(user=request.user, user_rated=medic.user).first()
