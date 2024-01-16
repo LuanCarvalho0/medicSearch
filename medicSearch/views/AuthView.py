@@ -25,7 +25,7 @@ def login_view(request):
                 if _next is not None:
                     return redirect(_next)
                 else:
-                    return('/')
+                    return redirect('/')
             else:
                 message = {
                     'type': 'danger',
